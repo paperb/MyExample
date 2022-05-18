@@ -1,13 +1,21 @@
 package com.myexample.ware;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.concurrent.ThreadPoolExecutor;
 
 @SpringBootTest
 class WareApplicationTests {
 
+
+    @Autowired
+    ThreadPoolExecutor executor;
     @Test
     void contextLoads() {
+
+
     }
 
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.FileDao">
+
+    <insert id="insertOneFile" parameterType="WorkOrderInfo" keyProperty="id">
+        insert into work_order_info values (null,#{workOrderId},#{storePath},#{createTime})
+    </insert>
+
+    <insert id="addClient" parameterType="Client">
+        insert into client(id,name,phone,address,create_time) values (null,#{name},#{phone},#{address},#{createTime})
+    </insert>
+
+    <select id="truncateList">
+        truncate work_order_info
+    </select>
+    <select id="selectByCreateTime" resultType="java.lang.Integer">
+        select count(create_time) from client where create_time=#{createTime}
+    </select>
+
+</mapper>
